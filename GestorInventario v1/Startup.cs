@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CBusiness.INV_JAC;
+using CData.INV_JAC;
 using CData.ORACLE;
 using CData.SQLSERVER;
+using Coravel;
+using GestorInventario_v1.Tareas;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +33,11 @@ namespace GestorInventario_v1
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddSingleton<OracleService>();
             services.AddSingleton<SqlServerService>();
+            services.AddTransient<B_Inventario_Jac>();
+            services.AddSingleton<D_Inventario_Jac>();
+
+            services.AddScheduler();
+            services.AddTransient<InventarioJac>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +55,17 @@ namespace GestorInventario_v1
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            if (!env.IsDevelopment())
+            {
+                app.UseStaticFiles();
+                var provider = app.ApplicationServices;
+                provider.UseScheduler(scheduler =>
+                {
+                    scheduler.OnWorker("Tareas");
+                    scheduler.Schedule<InventarioJac>().DailyAtHour(18);
+                });
+            }
 
             app.UseRouting();
 

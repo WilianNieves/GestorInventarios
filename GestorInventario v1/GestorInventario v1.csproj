@@ -6,7 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Coravel" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CBusiness\CBusiness.csproj" />
     <ProjectReference Include="..\CData\CData.csproj" />
+    <ProjectReference Include="..\CExceptions\CExceptions.csproj" />
   </ItemGroup>
 
 </Project>

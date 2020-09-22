@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorInventario v1", "GestorInventario v1\GestorInventario v1.csproj", "{DAF5CE71-7B95-42D7-909B-3F72888A820E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestorInventario v1", "GestorInventario v1\GestorInventario v1.csproj", "{DAF5CE71-7B95-42D7-909B-3F72888A820E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CModels", "CModels\CModels.csproj", "{CE1515DE-3549-4B91-A78F-5F12188C5657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CModels", "CModels\CModels.csproj", "{CE1515DE-3549-4B91-A78F-5F12188C5657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CBusiness", "CBusiness\CBusiness.csproj", "{C729A0A8-FA79-4C91-AEE6-BAE508B29BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBusiness", "CBusiness\CBusiness.csproj", "{C729A0A8-FA79-4C91-AEE6-BAE508B29BCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CData", "CData\CData.csproj", "{4C42984F-1827-4787-A714-2D3E6E71DF42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CData", "CData\CData.csproj", "{4C42984F-1827-4787-A714-2D3E6E71DF42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CExceptions", "CExceptions\CExceptions.csproj", "{510517CB-7051-4A2B-B66D-4D1A4197E336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4C42984F-1827-4787-A714-2D3E6E71DF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C42984F-1827-4787-A714-2D3E6E71DF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C42984F-1827-4787-A714-2D3E6E71DF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{510517CB-7051-4A2B-B66D-4D1A4197E336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{510517CB-7051-4A2B-B66D-4D1A4197E336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{510517CB-7051-4A2B-B66D-4D1A4197E336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{510517CB-7051-4A2B-B66D-4D1A4197E336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
