@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CapaDatos.COMUN;
 using CBusiness.INV_JAC;
+using CData.COMUN;
 using CData.INV_JAC;
 using CData.ORACLE;
 using CData.SQLSERVER;
@@ -63,7 +65,8 @@ namespace GestorInventario_v1
                 provider.UseScheduler(scheduler =>
                 {
                     scheduler.OnWorker("Tareas");
-                    scheduler.Schedule<InventarioJac>().DailyAtHour(18);
+                    scheduler.Schedule<InventarioJac>().Hourly();
+                    //scheduler.Schedule<InventarioJac>().DailyAtHour(18);
                 });
             }
 
