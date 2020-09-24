@@ -126,5 +126,10 @@ namespace CData.INV_JAC
                 $" AND t.d_cod_marca = {chasis.cod_marca}";
             await oracleService.ejecutarQueryAsync(query, param);
         }
+        public async Task CreateProductoVehiculo() 
+        {
+            string query = $"pkg_inventario.crea_producto_vehiculo_jac_ecu";
+            await oracleService.ejecutarProcedureAsync(query);
+        }
     }
 }

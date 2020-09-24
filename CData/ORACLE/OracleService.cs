@@ -274,5 +274,27 @@ namespace CData.ORACLE
                 conn.Dispose();
             }
         }
+        public async Task ejecutarProcedureAsync(string query) 
+        {
+            var conn = new OracleConnection(connectionOracleString);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                await Task.Run(() =>
+                {
+                    SqlMapper.Query(conn, query, commandType: CommandType.StoredProcedure);
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("OracleService, Eror al ejecutar Procedure SQL:", ex);
+            }
+            finally 
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
     }
 }
