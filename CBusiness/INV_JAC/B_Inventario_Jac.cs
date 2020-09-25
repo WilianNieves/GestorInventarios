@@ -39,7 +39,7 @@ namespace CBusiness.INV_JAC
                     var datchasisoracle = await invjacdata.getInfoChasisOracle(chasis.nro_factura, chasis.chasis, chasis.id_cliente);
                     chasis.sub_clase = datchasisoracle.j_sub_clase;
                     chasis.cod_marca = datchasisoracle.j_cod_marca;
-                    //chasis.clasificacion_exonerado = datchasisoracle.j_clasificacion_exonerado;
+                    chasis.clasificacion_exonerado = datchasisoracle.j_clasificacion_exonerado;
 
                     int cantidadrepetido = invjacdata.verifyExisteChasisOracle(chasis.nro_factura, chasis.chasis, chasis.id_cliente);
                     if (cantidadrepetido > 1) 

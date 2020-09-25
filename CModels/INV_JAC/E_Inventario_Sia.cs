@@ -28,7 +28,7 @@ namespace CModels.INV_JAC
         public string descripcion_color { get; set; }
         public string autorizacion_eje { get; set; }
         public int version_anio { get; set; }
-        //public int clasificacion_exonerado { get; set; }
+        public int clasificacion_exonerado { get; set; }
         //public string clasificacion_exonerado { get; set; }
         public string codigo_interno { get; set; }
         public string nfact1 { get; set; }
