@@ -4,6 +4,7 @@ using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -266,6 +267,28 @@ namespace CData.ORACLE
             catch (Exception ex)
             {
                 throw new Exception("OracleService, Eror al ejecutar comando SQL: ", ex);
+            }
+            finally 
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+        public async Task ejecutarProcedureAsync(string query) 
+        {
+            var conn = new OracleConnection(connectionOracleString);
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                await Task.Run(() =>
+                {
+                    SqlMapper.Query(conn, query, commandType: CommandType.StoredProcedure);
+                });
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("OracleService, Eror al ejecutar Procedure SQL:", ex);
             }
             finally 
             {

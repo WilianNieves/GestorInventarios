@@ -28,12 +28,14 @@ namespace CModels.INV_JAC
         public string descripcion_color { get; set; }
         public string autorizacion_eje { get; set; }
         public int version_anio { get; set; }
-        //public int clasificacion_exonerado { get; set; }
-        public string clasificacion_exonerado { get; set; }
+        public int clasificacion_exonerado { get; set; }
+        //public string clasificacion_exonerado { get; set; }
         public string codigo_interno { get; set; }
         public string nfact1 { get; set; }
         public string nfact2 { get; set; }
         public string nfact3 { get; set; }
+        public DateTime fecha_reg_factura { get; set; }
+        public int cod_marca { get; set; }
         public void separar_numfact() 
         {
             var arraynfact = nro_factura.Split('-');
