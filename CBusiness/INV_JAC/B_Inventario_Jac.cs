@@ -50,6 +50,7 @@ namespace CBusiness.INV_JAC
                     await invjacdata.UpdateInventarioOracle(chasis, fechareg);
                 }
             });
+            await invjacdata.CreateProductoVehiculo();
         }
     }
 }
