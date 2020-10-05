@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>GestorInventario_v1</RootNamespace>
+    <UserSecretsId>d23e7063-9846-4852-8141-821ac1479bc9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
