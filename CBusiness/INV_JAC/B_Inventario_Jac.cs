@@ -23,7 +23,7 @@ namespace CBusiness.INV_JAC
         {
             int codigomarca = 300;
             var fechareg = DateTime.Now;
-            List<E_Inventario_Sia> chasises = await invjacdata.getInventarioSia();
+            List<E_Inventario_Sia> chasises = invjacdata.getInventarioSia();
             chasises.ForEach(async chasis => 
             {
                 chasis.fecha_reg_factura = Convert.ToDateTime(chasis.fecha_factura);
@@ -36,7 +36,7 @@ namespace CBusiness.INV_JAC
                 }
                 else 
                 {
-                    var datchasisoracle = await invjacdata.getInfoChasisOracle(chasis.nro_factura, chasis.chasis, chasis.id_cliente);
+                    var datchasisoracle = invjacdata.getInfoChasisOracle(chasis.nro_factura, chasis.chasis, chasis.id_cliente);
                     chasis.sub_clase = datchasisoracle.j_sub_clase;
                     chasis.cod_marca = datchasisoracle.j_cod_marca;
                     chasis.clasificacion_exonerado = datchasisoracle.j_clasificacion_exonerado;

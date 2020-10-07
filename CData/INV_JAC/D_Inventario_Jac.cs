@@ -27,7 +27,7 @@ namespace CData.INV_JAC
                 $" ORDER BY(t.fecha_factura), (t.chasis) ASC ";
             return sqlServerService.get_list<E_Inventario_Sia>(query);
         }
-        public async Task<List<E_Inventario_Sia>> getInventarioSia() 
+        public List<E_Inventario_Sia> getInventarioSia() 
         {
             string query = $"SELECT t.* " +
                 $" FROM VST_VEHICULOS_ADA t " +
@@ -66,7 +66,7 @@ namespace CData.INV_JAC
                 $" '{chasis.autorizacion_eje}', {chasis.version_anio}, {chasis.clasificacion_exonerado}, '{chasis.codigo_interno}', {fecharegistro})";
             await oracleService.ejecutarQueryAsync(query, param);
         }
-        public async Task<E_Chasis> getInfoChasisOracle(string nroFactura, string chasis, string idCliente) 
+        public E_Chasis getInfoChasisOracle(string nroFactura, string chasis, string idCliente) 
         {
             string query = $"SELECT t.* " +
                 $" FROM BD_INVENTARIO_JAC_RED t " +
