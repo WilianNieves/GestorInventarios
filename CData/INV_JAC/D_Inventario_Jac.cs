@@ -33,7 +33,7 @@ namespace CData.INV_JAC
                 $" FROM VST_VEHICULOS_ADA t " +
                 $" WHERE t.chasis is not null  " +
                 //$" AND t.chasis = '8LG3EKR20JE000013' " +
-                $" AND t.fecha_factura between GETDATE() - 3 and GETDATE() " +
+                $" AND t.fecha_factura between GETDATE() - 10 and GETDATE() " +
                 $" ORDER BY(t.fecha_factura), (t.chasis) ASC ";
             return sqlServerService.get_list<E_Inventario_Sia>(query);
         }

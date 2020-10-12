@@ -66,7 +66,7 @@ namespace GestorInventario_v1
                 {
                     scheduler.OnWorker("Tareas");
                     //scheduler.Schedule<InventarioJac>().Hourly();
-                    scheduler.Schedule<InventarioJac>().DailyAtHour(8);
+                    scheduler.Schedule<InventarioJac>().DailyAtHour(13);
                 });
             }
 
