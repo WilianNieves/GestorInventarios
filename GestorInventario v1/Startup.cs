@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using CapaDatos.COMUN;
 using CBusiness.INV_JAC;
-using CData.COMUN;
 using CData.INV_JAC;
 using CData.ORACLE;
 using CData.SQLSERVER;
@@ -12,7 +9,6 @@ using Coravel;
 using GestorInventario_v1.Tareas;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -61,7 +57,7 @@ namespace GestorInventario_v1
 
             if (!env.IsDevelopment())
             {
-                //app.UseStaticFiles();
+                app.UseStaticFiles();
                 var provider = app.ApplicationServices;
                 provider.UseScheduler(scheduler =>
                 {
