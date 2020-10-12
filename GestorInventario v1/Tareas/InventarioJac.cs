@@ -21,7 +21,7 @@ namespace GestorInventario_v1.Tareas
         {
             return Task.Run(() =>
             {
-                logger.LogInformation("Inventario Jac vista Sia: " + DateTime.Now.ToString() + Guid.NewGuid().ToString("n").Substring(16));
+                //logger.LogInformation("Inventario Jac vista Sia: " + DateTime.Now.ToString() + Guid.NewGuid().ToString("n").Substring(16));
                 invjac.getInventarioSia();
             });
         }

@@ -57,16 +57,18 @@ namespace GestorInventario_v1
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCors("EnabledCORS");
 
             if (!env.IsDevelopment())
             {
-                app.UseStaticFiles();
+                //app.UseStaticFiles();
                 var provider = app.ApplicationServices;
                 provider.UseScheduler(scheduler =>
                 {
                     scheduler.OnWorker("Tareas");
                     //scheduler.Schedule<InventarioJac>().Hourly();
-                    scheduler.Schedule<InventarioJac>().DailyAtHour(8);
+                    scheduler.Schedule<InventarioJac>().DailyAtHour(15);
+                    scheduler.Schedule<InventarioJac>().EveryFiveMinutes();
                 });
             }
 
@@ -80,6 +82,7 @@ namespace GestorInventario_v1
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
