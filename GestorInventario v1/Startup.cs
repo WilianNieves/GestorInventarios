@@ -57,7 +57,7 @@ namespace GestorInventario_v1
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCors("EnabledCORS");
+            //app.UseCors("EnabledCORS");
 
             if (!env.IsDevelopment())
             {
