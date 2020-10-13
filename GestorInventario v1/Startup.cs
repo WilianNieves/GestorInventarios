@@ -57,15 +57,16 @@ namespace GestorInventario_v1
 
             if (!env.IsDevelopment())
             {
-                app.UseStaticFiles();
+                //app.UseStaticFiles();
                 var provider = app.ApplicationServices;
                 provider.UseScheduler(scheduler =>
                 {
                     scheduler.OnWorker("Tareas");
                     //scheduler.Schedule<InventarioJac>().Hourly();
-                    scheduler.Schedule<InventarioJac>().DailyAtHour(10);
+                    //scheduler.Schedule<InventarioJac>().DailyAtHour(10);
+                    //scheduler.Schedule<InventarioJac>().HourlyAt(5);
                     //scheduler.Schedule<InventarioJac>().DailyAtHour(8);
-                    //scheduler.Schedule<InventarioJac>().EveryFiveMinutes();
+                    scheduler.Schedule<InventarioJac>().EveryFiveMinutes();
                 });
             }
 
