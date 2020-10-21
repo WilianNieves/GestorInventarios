@@ -19,10 +19,10 @@ namespace GestorInventario_v1.Tareas
         }
         public Task Invoke() 
         {
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
                 logger.LogInformation("Inventario Jac vista Sia: " + DateTime.Now.ToString() + Guid.NewGuid().ToString("n").Substring(16));
-                invjac.getInventarioSia();
+                await invjac.getInventarioSia();
             });
         }
     }
