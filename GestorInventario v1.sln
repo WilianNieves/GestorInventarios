@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBusiness", "CBusiness\CBus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CData", "CData\CData.csproj", "{4C42984F-1827-4787-A714-2D3E6E71DF42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CExceptions", "CExceptions\CExceptions.csproj", "{510517CB-7051-4A2B-B66D-4D1A4197E336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CExceptions", "CExceptions\CExceptions.csproj", "{510517CB-7051-4A2B-B66D-4D1A4197E336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
